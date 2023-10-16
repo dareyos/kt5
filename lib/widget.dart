@@ -10,8 +10,8 @@ class CarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: Text(index.toString()),
-      title: Text(car.model),
-      subtitle: Text("Car brand: ${car.brand}, color: ${car.color}"),
+      title: Text("${car.brand}: ${car.model}"),
+      subtitle: Text("Car color: ${car.color}"),
       //subtitle: Text(car.color),
 
       trailing: Text("Total price: ${car.price.toString()}"),
