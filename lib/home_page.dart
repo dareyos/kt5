@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:kt5/models/car/car.dart';
 import 'package:kt5/models/cars_data/cars_data.dart';
+import 'package:kt5/widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -22,7 +23,17 @@ class _HomePageState extends State<HomePage> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    getNetworkData();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: ListView.builder(itemCount: carList.length, itemBuilder:(context, index) {
+      return CarWidget(car: carList[index], index: index + 1);   
+      },),
+    );
   }
 }
